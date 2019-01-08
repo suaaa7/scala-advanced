@@ -6,3 +6,6 @@ trait Stack[+T] {
   def isEmpty: Boolean
 }
 
+class NonEmptyStack[+T]() extends Stack[T] {
+
+}
