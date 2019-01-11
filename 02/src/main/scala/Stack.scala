@@ -18,3 +18,16 @@ class NonEmptyStack[+T](
 
 }
 
+case object EmptyStack extends Stack[Nothing] {
+  def pop: Nothing = throw new IllegalArgumentException("empty stack")
+
+  def push[E >: Nothing](e: E): Stack[E] = new NonEmptyStack[E](e, this)
+
+  def isEmpty: Boolean = true
+
+}
+
+object Stack {
+  def apply(): Stack[Nothing] = EmptyStack
+}
+
