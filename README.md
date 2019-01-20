@@ -5,6 +5,5 @@ N予備校: Scala応用コース
 
 ```
 $ sbt
-
-$ project NUMBER
+> project NUMBER
 ```
