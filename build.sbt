@@ -1,5 +1,18 @@
-version := "1.0"
+lazy val commonSettings = Seq(
+  version := "1.0",
+  scalaVersion := "2.12.7",
+  libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.5" % "test"
+)
 
-scalaVersion := "2.12.7"
+lazy val root = (project in file(".")).
+  settings(commonSettings: _*).
+  settings(
+    name := "root"
+  )
 
-libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.5" % "test"
+lazy val sbt02 = (project in file("02")).
+  settings(commonSettings: _*).
+  settings(
+    name := "02"
+  )
+
