@@ -14,4 +14,11 @@ object ParserStudy {
       Failure
     }
 
+  def falseParser: Parser[Boolean] = input =>
+    if (input.startWith("false")) {
+      Success(false, input.substring("false".length))
+    } else {
+      Failure
+    }
+
 }
